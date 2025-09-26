@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services - CASHTEAM</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #fdfcf7;
+      color: #222;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    /* Navigation */
+    nav {
+      background-color: #008080;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav .logo {
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #ffdf70;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background: white;
+      margin: 4px 0;
+      border-radius: 3px;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background: #008080;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 20px;
+      }
+      nav ul.active {
+        display: flex;
+      }
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    /* Services Section */
+    #services {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    #services h2 {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 600;
+      color: #008080;
+      margin-bottom: 40px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .service {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .service h4 {
+      color: #008080;
+      margin-bottom: 10px;
+    }
+
+    .service p {
+      margin-bottom: 15px;
+      font-size: 0.95rem;
+      color: #444;
+    }
+
+    video {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin-bottom: 15px;
+    }
+
+    button {
+      background-color: #008080;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+
+    button:hover {
+      background-color: #006666;
+      transform: scale(1.05);
+    }
+
+    input[type="file"] {
+      margin-top: 10px;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">CASHTEAM</div>
+    <ul id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about-us.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <!-- Services Section -->
+  <section id="services">
+    <h2>CASHTEAM AI STUDIO SERVICES</h2>
+    <div class="services">
+
+      <div class="service">
+        <h4>{1} TOP NOTCH VIDEO</h4>
+        <p>A nice video that showcases your product, how it works, and explains the needs.</p>
+        <video controls src="lion.mp4"></video>
+        <button>View More Top Notch Videos</button>
+        <p>Upload your reference video:</p>
+        <input type="file" accept="video/*">
+      </div>
+
+      <div class="service">
+        <h4>{2} SOCIAL MEDIA VIDEO</h4>
+        <p>A quick video that new content creators use to grow their page, gain views, likes, and comments.</p>
+        <video controls src="muscle.mp4"></video>
+        <button>View More Social Media Videos</button>
+        <p>Upload your reference video:</p>
+        <input type="file" accept="video/*">
+      </div>
+
+      <div class="service">
+        <h4>{3} AI MOVIE TRIAL</h4>
+        <p>A quick video that new movie creators use to preview how sweet their video is going to look.</p>
+        <video controls src="ai-movie.mp4"></video>
+        <button>View More AI Movie Trial Videos</button>
+        <p>Upload your reference video:</p>
+        <input type="file" accept="video/*">
+      </div>
+
+      <div class="service">
+        <h4>{4} GAMING VIDEOS</h4>
+        <p>Videos that gamers watch to learn new skills, gain scope, and connect with fans.</p>
+        <video controls src="gaming.mp4"></video>
+        <button>View More Gaming Videos</button>
+        <p>Upload your reference video:</p>
+        <input type="file" accept="video/*">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Script for hamburger menu -->
+  <script>
+    const toggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    toggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  </script>
+
+</body>
+</html>

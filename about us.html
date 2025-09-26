@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - CASHTEAM</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: #fdfcf7;
+      color: #222;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    /* Navigation */
+    nav {
+      background-color: #008080;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav .logo {
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #ffdf70;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background: white;
+      margin: 4px 0;
+      border-radius: 3px;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background: #008080;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 20px;
+      }
+      nav ul.active {
+        display: flex;
+      }
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    /* About Section */
+    section.about {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-text {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .about-text h1 {
+      color: #008080;
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .about-text p {
+      margin-bottom: 15px;
+    }
+
+    .about-text h4 {
+      margin-top: 15px;
+      font-weight: 600;
+      color: #444;
+    }
+
+    .about-images {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .about-images img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .about-images img:hover {
+      transform: scale(1.03);
+    }
+
+    .tagline {
+      text-align: center;
+      margin-top: 20px;
+      font-weight: 600;
+      color: #008080;
+    }
+
+    @media (max-width: 768px) {
+      section.about {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">CASHTEAM</div>
+    <ul id="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <!-- About Us Section -->
+  <section id="about" class="about">
+    <!-- Left Column (Text) -->
+    <div class="about-text">
+      <h1>About Us</h1>
+      <p>We are an AI video creation company dedicated to transforming ideas into stunning, high-quality videos. Our mission is to make video production faster, smarter, and more accessible, helping businesses and creators tell their stories with the power of artificial intelligence.</p>
+      <h4><i>CASHTEAM CEO:</i> MOSES DECASH</h4>
+      <p class="tagline">CASHTEAM GUYS {WORK HARD AND STAY HUMBLE}</p>
+    </div>
+
+    <!-- Right Column (Images) -->
+    <div class="about-images">
+      <img src="baddes.jpg" alt="CEO Picture">
+      <img src="badder%202.jpg" alt="Team Picture 1">
+      <img src="badder3.jpg" alt="Team Picture 2">
+    </div>
+  </section>
+
+  <!-- Script for Hamburger Menu -->
+  <script>
+    const toggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    toggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  </script>
+
+</body>
+</html>

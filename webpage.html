@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CASHTEAM</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #fdfcf7;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    /* Navigation */
+    nav {
+      background: linear-gradient(90deg, #42f3f3, #8ddbdb);
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    nav .logo {
+      color: white;
+      font-size: 1.7rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #ffdf70;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background: white;
+      margin: 4px 0;
+      border-radius: 3px;
+      transition: 0.3s;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background: #5cdddd;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 20px;
+      }
+      nav ul.active {
+        display: flex;
+      }
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(0,128,128,0.7), rgba(0,128,128,0.7)), url("hero.jpg") no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    /* Sections */
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    section h1, section h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-weight: 600;
+      color: #008080;
+    }
+
+    /* Services */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    .service {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    video, img {
+      width: 100%;
+      border-radius: 10px;
+      margin: 15px 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    button {
+      background-color: #008080;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    button:hover {
+      background-color: #006666;
+      transform: scale(1.05);
+    }
+
+    input[type="file"] {
+      margin-top: 10px;
+    }
+
+    /* About Us */
+    .about img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin: 15px 0;
+    }
+
+    .about p {
+      margin-top: 10px;
+    }
+
+    /* Contact */
+    .contact-form {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+      transition: border 0.3s ease;
+    }
+
+    .contact-form input:focus, .contact-form textarea:focus {
+      border: 1px solid #008080;
+    }
+
+    .contact-form button {
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    /* Footer */
+    footer {
+      background: #008080;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: #ffdf70;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">CASHTEAM</div>
+    <ul id="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="services.html" target="_blank">Services</a></li>
+      <li><a href="about us.html" target="_blank">About Us</a></li>
+      <li><a href="contact.html" target="_blank">Contact</a></li>
+    </ul>
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <h1>CASHTEAM AI STUDIO</h1>
+    <p>"AI Studio is a creative workspace that lets you build, test, and deploy AI-powered projects ranging from chatbots and content generators to data-driven tools without needing deep technical expertise."</p>
+
+    <h2><u>CASHTEAM AI IMAGES</u></h2>
+
+    <img src="image 4.PNG" alt=" Image 4 picture">
+    <img src="image 5.PNG" alt=" Image 5 picture">
+    <img src="image 6.PNG" alt=" Image 6 picture">
+    <img src="image 1.jpeg" alt=" Image 1 picture">
+    <img src="image 2.jpeg" alt=" Image 2 picture">
+    <img src="image 3.jpeg" alt=" Image 3 picture">
+
+    <p style="text-align: center; margin-top: 15px;">
+      INCREDIBLE AI IMAGE FROM THE CASHTEAM GUYS {WORK HARD AND STAY HUMBLE}
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p><i>Follow us on:</i> <a href="https://facebook.com/Decashteamvew" target="_blank">Facebook</a></p>
+    <p>&copy; 2025 CASHTEAM AI STUDIO. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Script for hamburger menu -->
+  <script>
+    const toggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    toggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  </script>
+
+</body>
+</html>
